@@ -3,9 +3,11 @@
   {% include header.html %}
   <body site-theme="{{ site.mode }}" class="notransition">
     <script>
-      const cachedTheme = localStorage.getItem("theme");
+      var cachedTheme = localStorage.getItem("theme");
       if (cachedTheme) {
         document.body.setAttribute("site-theme", cachedTheme);
+      } else {
+        localStorage.setItem("theme", "light"); // Default theme
       }
 
       setTimeout(() => body.classList.remove("notransition"), 75);
@@ -19,5 +21,14 @@
       </div>
     </div>
     {% include footer.html %}
+
+    <script>
+      cachedTheme = localStorage.getItem("theme");  // Pull the potentially updated theme
+      if (cachedTheme == "light") {
+        document.getElementById("dark-mode-img").src = "/assets/img/sun.png";
+      } else if (cachedTheme == "dark") {
+        document.getElementById("dark-mode-img").src = "/assets/img/moon.png";
+      }
+    </script>
   </body>
 </html>

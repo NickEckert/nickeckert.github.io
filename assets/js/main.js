@@ -3,13 +3,6 @@ const toggle = document.getElementById("dark-mode-toggle"); // CSS toggle elemen
 
 // setTimeout(() => body.classList.remove("notransition"), 75);
 
-// Run this every time the page loads to set the correct toggle image
-if (cachedTheme == "light") {
-  document.getElementById("dark-mode-img").src = "/assets/img/sun.png";
-} else {
-  document.getElementById("dark-mode-img").src = "/assets/img/moon.png";
-}
-
 const toggleTheme = (state) => {
   if (state === "dark") {
     localStorage.setItem("theme", "light");
@@ -19,8 +12,6 @@ const toggleTheme = (state) => {
     localStorage.setItem("theme", "dark");
     body.setAttribute("site-theme", "dark");
     document.getElementById("dark-mode-img").src = "/assets/img/moon.png";
-  } else {
-    initTheme(state);
   }
 };
 
