@@ -22,6 +22,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  NickEckert
 mode: light
 
+author:
+  name: Nick Eckert
+  username: nickeckert
+  github: NickEckert
+
 # Build settings
 markdown: kramdown
 theme: minima
@@ -30,6 +35,11 @@ plugins:
 
 sass:
   style: nested
+
+number_of_posts: 10
+
+plugins:
+  - jekyll-toc
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

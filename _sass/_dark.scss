@@ -112,6 +112,17 @@ body[site-theme="dark"] {
 
     span[itemprop="author"] {
       border-color: $dark-light;
+
+      a {
+        color: #b9b0b1;
+        font-weight: 700;
+
+        &:hover,
+        &:focus {
+          color: $dark-text-link-blue;
+          opacity: 1;
+        }
+      }
     }
   }
 

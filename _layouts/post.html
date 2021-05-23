@@ -5,7 +5,6 @@ layout: default
 <div class="post">
   <main class="page-content" aria-label="Content">
     <article itemscope itemtype="https://schema.org/BlogPosting">
-
       <header class="header">
         {% if page.tags and page.tags != empty %}
         <div class="tags">
@@ -24,8 +23,9 @@ layout: default
           <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
             {{ page.date | date: "%b %d, %Y" }}
           </time>
+          by
           <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-            <span itemprop="name">{{ site.author.name }}</span>
+            <a href="/about"><span itemprop="name">{{ site.author.name }}</span></a>
           </span>
           <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
             {{ page.date | date: "%b %d, %Y" }}

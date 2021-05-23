@@ -64,6 +64,31 @@ body {
   box-sizing: border-box;
 }
 
+.wrapper {
+  @extend %clearfix;
+
+  max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full} * 2));
+  max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-full;
+  padding-left: $spacing-full;
+  padding-bottom: 100px;
+
+  @include media-query($on-mobile) {
+    max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full}));
+    max-width: calc(#{$narrow-size} - (#{$spacing-full}));
+    padding-right: $spacing-full - 10;
+    padding-left: $spacing-full - 10;
+
+    &.blurry {
+      animation: 0.2s ease-in forwards blur;
+      -webkit-animation: 0.2s ease-in forwards blur;
+    }
+  }
+}
+
 // Set `margin-bottom` to maintain vertical rhythm
 h1,
 h2,
@@ -273,31 +298,6 @@ blockquote {
   }
 }
 
-.wrapper {
-  @extend %clearfix;
-
-  max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full} * 2));
-  max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: $spacing-full;
-  padding-left: $spacing-full;
-  padding-bottom: 100px;
-
-  @include media-query($on-mobile) {
-    max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full}));
-    max-width: calc(#{$narrow-size} - (#{$spacing-full}));
-    padding-right: $spacing-full - 10;
-    padding-left: $spacing-full - 10;
-
-    &.blurry {
-      animation: 0.2s ease-in forwards blur;
-      -webkit-animation: 0.2s ease-in forwards blur;
-    }
-  }
-}
-
 // Underline
 u {
   text-decoration-color: #d2c7c7;
@@ -348,13 +348,6 @@ table {
   content: "";
   display: table;
   clear: both;
-}
-
-// When mouse block a text set this color
-mark,
-::selection {
-  background: #fffba0;
-  color: $black;
 }
 
 // Github Gist clear border

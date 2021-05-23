@@ -2,7 +2,7 @@
 title: Tags
 permalink: /tags/
 layout: page
-excerpt: Sorted article by tags.
+excerpt: Sorted articles by tags.
 ---
 
 <div class="archive-tags">

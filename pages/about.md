@@ -5,4 +5,6 @@ layout: page
 comments: false
 ---
 
-Welcome to my blog! Documenting things that I learn so I can refrence them later and if someone else finds them useful then all the better. 
+Welcome to my blog! 
+
+I hope you enjoy the content I post and feel free to send me an email if you find a gap in my understanding or grammar.
